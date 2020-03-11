@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Ponoosamy Vinayagem</title>
+		<script>
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+		function onDeviceReady(){
+		window.addEventListener("batterystatus", onBatteryStatus, false);
+		}
+		
+		function onBatteryStatus(info) { 
+		   alert("BATTERY STATUS:  The percentage of the battery is  " + info.level + "%. The mobile is Plugged: " + info.isPlugged);
+           document.getElementById("battery").innerHTML = "BATTERY STATUS:  The percentage of the battery is " + info.level + " %. The mobile is Plugged: " + info.isPlugged;
+        }
+		</script>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+		<h4>This app has been developed to show the battery status of the mobile phone.</h4>
+		<div id="battery"></div>
+    </body>
+</html>
